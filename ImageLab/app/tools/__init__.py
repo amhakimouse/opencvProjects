@@ -1,0 +1,1 @@
+from app.tools import brightness,  histogram  # noqa: F401  (importing registers the tool)

@@ -1,0 +1,5 @@
+ImageLab/.venv/
+ImageLab/__pycache__/
+ImageLab/*.pyc
+*.pyc
+output/

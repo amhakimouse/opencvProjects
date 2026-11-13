@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ImageLab</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">ImageLab</div>
+      <nav id="tools" class="tools"></nav>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h1 id="toolName">ImageLab</h1>
+          <p id="toolDesc"></p>
+        </div>
+        <div class="actions">
+          <button id="changeBtn" class="btn" hidden>Change image</button>
+          <button id="resetBtn" class="btn" disabled>Reset</button>
+          <button id="downloadBtn" class="btn primary" disabled>Download</button>
+        </div>
+      </header>
+
+      <section class="workspace">
+        <div id="dropzone" class="dropzone">
+          <p>Drop, paste or <button id="browse" class="link">browse</button> an image</p>
+        </div>
+        <div id="viewer" class="viewer" hidden>
+          <figure><figcaption>Original</figcaption><img id="original" alt="Original"></figure>
+          <figure><figcaption>Result <span id="status"></span></figcaption><img id="result" alt="Result"></figure>
+        </div>
+      </section>
+    </main>
+
+    <aside class="panel">
+      <h2>Parameters</h2>
+      <div id="controls"></div>
+    </aside>
+  </div>
+
+  <input type="file" id="file" accept="image/*" hidden>
+  <div id="toast" class="toast"></div>
+  <script src="/js/app.js"></script>
+</body>
+</html>
