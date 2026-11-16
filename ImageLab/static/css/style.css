@@ -30,10 +30,10 @@ h1{font-size:22px;font-weight:500}
 body.dragging .dropzone{border-color:var(--accent);background:var(--surface)}
 .link{background:none;border:0;color:var(--accent);font:inherit;cursor:pointer;text-decoration:underline}
 
-.viewer{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:16px;align-content:start}
+
 figure{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:12px}
 figcaption{font-size:13px;color:var(--muted);margin-bottom:8px}
-figure img{width:100%;display:block;border-radius:8px}
+
 
 .field{margin-bottom:18px}
 .field label{display:flex;justify-content:space-between;font-size:14px;margin-bottom:8px}
@@ -50,5 +50,26 @@ figure img{width:100%;display:block;border-radius:8px}
   .sidebar{border-right:0;border-bottom:1px solid var(--border)}
   .tools{flex-direction:row;flex-wrap:wrap}
   .panel{border-left:0;border-top:1px solid var(--border)}
-  .viewer{grid-template-columns:1fr}
 }
+.viewer{flex:1;display:flex;flex-direction:column;gap:16px}
+.seg{display:inline-flex;align-self:flex-start;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.seg-btn{padding:6px 14px;border:0;background:var(--surface);color:var(--muted);font:inherit;cursor:pointer}
+.seg-btn.active{background:var(--accent);color:var(--accent-text)}
+
+.compare{--pos:50%;position:relative;display:grid;overflow:hidden;border-radius:var(--radius);border:1px solid var(--border);background:var(--surface);user-select:none;touch-action:none;cursor:ew-resize}
+.pane{grid-area:1/1;position:relative;background:none;border:0;padding:0;border-radius:0}
+.pane img{width:100%;display:block}
+.pane-result{clip-path:inset(0 0 0 var(--pos))}
+.tag{position:absolute;top:10px;left:10px;padding:3px 8px;border-radius:6px;font-size:12px;background:var(--text);color:var(--bg);opacity:.85}
+.tag.right{left:auto;right:10px}
+.handle{position:absolute;top:0;bottom:0;left:var(--pos);width:2px;margin-left:-1px;background:var(--accent);pointer-events:none}
+.handle::after{content:"↔";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:32px;height:32px;border-radius:50%;background:var(--accent);color:var(--accent-text);display:grid;place-items:center}
+
+.compare.side{grid-template-columns:1fr 1fr;gap:12px;cursor:default;border:0;background:none}
+.compare.side .pane{grid-area:auto;clip-path:none}
+.compare.side .handle{display:none}
+
+.histos{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+canvas{width:100%;height:auto;display:block}
+figcaption span{margin-left:8px}
+@media (max-width:900px){.histos{grid-template-columns:1fr}}

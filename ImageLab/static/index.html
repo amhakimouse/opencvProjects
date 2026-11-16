@@ -30,10 +30,23 @@
         <div id="dropzone" class="dropzone">
           <p>Drop, paste or <button id="browse" class="link">browse</button> an image</p>
         </div>
-        <div id="viewer" class="viewer" hidden>
-          <figure><figcaption>Original</figcaption><img id="original" alt="Original"></figure>
-          <figure><figcaption>Result <span id="status"></span></figcaption><img id="result" alt="Result"></figure>
+      <div id="viewer" class="viewer" hidden>
+          <div class="seg">
+            <button id="modeSlider" class="seg-btn active">Slider</button>
+            <button id="modeSide" class="seg-btn">Side by side</button>
+          </div>
+
+        <div id="compare" class="compare">
+          <figure class="pane"><img id="original" alt="Original"><span class="tag">Original</span></figure>
+          <figure class="pane pane-result"><img id="result" alt="Result"><span class="tag right">Result <span id="status"></span></span></figure>
+          <div class="handle"></div>
         </div>
+
+        <div class="histos">
+          <figure><figcaption>Original <span id="statOrig"></span></figcaption><canvas id="histOrig" width="512" height="140"></canvas></figure>
+          <figure><figcaption>Result <span id="statRes"></span></figcaption><canvas id="histRes" width="512" height="140"></canvas></figure>
+        </div>
+      </div>
       </section>
     </main>
 
