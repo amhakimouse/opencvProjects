@@ -1,1 +1,1 @@
-from app.tools import brightness,  histogram, gamma, treshold, noise, denoise  # noqa: F401  (importing registers the tool)
+from app.tools import brightness,  histogram, gamma, treshold, noise, denoise, fourier  # noqa: F401  (importing registers the tool)

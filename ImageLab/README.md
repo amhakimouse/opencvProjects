@@ -1,3 +1,22 @@
+# Set up
+
+winget install --id Git.Git -e
+
+winget install --id=astral-sh.uv -e
+
+
+
+cd path\to\ImageLab
+
+uv sync
+
+
+
+uv run pytest -q
+
+uv run uvicorn app.main:app --reload
+
+
 ImageLab/
 ├── app/
 │   ├── main.py        # generic API: GET /tools, POST /process/{tool}
