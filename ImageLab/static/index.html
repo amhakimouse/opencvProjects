@@ -9,7 +9,12 @@
 <body>
   <div class="app">
     <aside class="sidebar">
-      <div class="brand">ImageLab</div>
+      <div class="sidebar-heading">
+        <div class="brand">ImageLab</div>
+        <button id="toggleTools" class="sidebar-toggle" type="button" aria-label="Collapse tools menu" aria-controls="tools" aria-expanded="true">
+          <span aria-hidden="true">‹</span>
+        </button>
+      </div>
       <nav id="tools" class="tools"></nav>
     </aside>
 
@@ -51,7 +56,12 @@
     </main>
 
     <aside class="panel">
-      <h2>Parameters</h2>
+      <div class="panel-heading">
+        <h2>Parameters</h2>
+        <button id="toggleParameters" class="sidebar-toggle" type="button" aria-label="Collapse parameters menu" aria-controls="controls" aria-expanded="true">
+          <span aria-hidden="true">›</span>
+        </button>
+      </div>
       <div id="controls"></div>
     </aside>
   </div>

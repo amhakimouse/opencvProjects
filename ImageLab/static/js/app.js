@@ -178,6 +178,20 @@ function setMode(side) {
 $("#modeSlider").onclick = () => setMode(false);
 $("#modeSide").onclick = () => setMode(true);
 
+function setupCollapsibleMenu(buttonId, collapsedClass, collapsedLabel, expandedLabel, expandedIcon, collapsedIcon) {
+  const button = $("#" + buttonId);
+  const app = $(".app");
+  button.onclick = () => {
+    const collapsed = app.classList.toggle(collapsedClass);
+    button.setAttribute("aria-expanded", String(!collapsed));
+    button.setAttribute("aria-label", collapsed ? expandedLabel : collapsedLabel);
+    button.firstElementChild.textContent = collapsed ? collapsedIcon : expandedIcon;
+  };
+}
+
+setupCollapsibleMenu("toggleTools", "tools-collapsed", "Collapse tools menu", "Expand tools menu", "‹", "›");
+setupCollapsibleMenu("toggleParameters", "parameters-collapsed", "Collapse parameters menu", "Expand parameters menu", "›", "‹");
+
 // ---------- histograms ----------
 function histogram(img) {
   const c = document.createElement("canvas");
